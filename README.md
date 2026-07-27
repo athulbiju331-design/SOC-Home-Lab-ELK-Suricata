@@ -1,11 +1,25 @@
-# 🛡️ SOC Home Lab (ELK + Suricata + Threat Intelligence)
+# 🛡️ ELK Stack Network Security Monitoring System
 
-## 📌 Overview
+A Security Operations Center (SOC) Home Lab built on **Kali Linux** using the **ELK Stack (Elasticsearch, Logstash, Kibana)** and **Suricata IDS** for real-time network monitoring, threat detection, and threat intelligence enrichment.
 
-This project demonstrates a Security Operations Center (SOC) home lab using the ELK Stack and Suricata IDS for real-time threat detection and log analysis.
+---
 
-## 🛠️ Tools Used
+## 📌 Project Overview
 
+This project demonstrates a complete Network Security Monitoring (NSM) solution capable of:
+
+- Detecting network attacks using Suricata IDS
+- Collecting logs using Filebeat
+- Processing logs with Logstash
+- Storing data in Elasticsearch
+- Visualizing alerts in Kibana
+- Enriching alerts using VirusTotal API and AlienVault OTX
+
+---
+
+## 🛠️ Technologies Used
+
+- Kali Linux
 - Elasticsearch
 - Logstash
 - Kibana
@@ -13,27 +27,61 @@ This project demonstrates a Security Operations Center (SOC) home lab using the 
 - Suricata IDS
 - VirusTotal API
 - AlienVault OTX
+- Nmap
 
-## ⚙️ Setup
+---
 
-- Installed and configured ELK Stack
-- Configured Suricata IDS
-- Integrated Filebeat for log forwarding
-- Visualized logs in Kibana
+## 🏗️ Architecture
+
+```
+Windows Host (Nmap)
+        │
+        ▼
+   Suricata IDS
+        │
+        ▼
+     Filebeat
+        │
+        ▼
+     Logstash
+        │
+        ▼
+ Elasticsearch
+        │
+        ▼
+      Kibana
+```
+
+---
 
 ## ⚔️ Attack Simulation
 
-- Nmap scans
-- HTTP requests
-- Alert generation
+The following attacks were simulated:
+
+- Nmap SYN Scan
+- Service Version Scan
+- OS Detection
+- ICMP Ping Flood
+- SSH Brute Force
+- Malware Test
+- DNS Anomaly Detection
+
+---
 
 ## 🚀 Features
 
-- Real-time alert detection
-- Threat intelligence enrichment
-- Dashboard visualization
+- Real-time Intrusion Detection
+- Threat Intelligence Enrichment
+- VirusTotal Integration
+- AlienVault OTX Integration
+- Kibana Dashboard
+- Security Alert Detection
+- Threat Level Classification
+- Custom Suricata Rules
 
-# 📷 Screenshots
+---
+
+## 📷 Screenshots
 
 ### SOC Monitoring Dashboard
 
@@ -47,7 +95,7 @@ This project demonstrates a Security Operations Center (SOC) home lab using the 
 
 ![Discover](screenshots/discover-suricata-alerts.jpeg)
 
-### Nmap Attack
+### Nmap Attack Simulation
 
 ![Nmap Attack](screenshots/nmap-attack.png)
 
@@ -55,6 +103,8 @@ This project demonstrates a Security Operations Center (SOC) home lab using the 
 
 ![Suricata Logs](screenshots/suricata-eve-json.jpeg)
 
+---
+
 ## 🎯 Outcome
 
-Successfully built a SOC Home Lab capable of monitoring, detecting, and analysing network threats using the ELK Stack and Suricata IDS.
+Successfully built a complete SOC Home Lab capable of detecting, analysing and visualising network threats using the ELK Stack and Suricata IDS with integrated threat intelligence.
